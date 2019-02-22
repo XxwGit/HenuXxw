@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_blue">#1C89E6</color>
+    <color name="black_semi_transparent">#00000000</color>
+    <color name="white">#00000000</color>
+    <color name="text">#000000</color>
+    <color name="color_232323">#232323</color>
+    <color name="gray_all">#bfbfbf</color>
+    <color name="ff">#414040</color>
+    <color name="divid">#e7e6e6</color>
+
+    <color name="nightAll">#212b30</color>
+    <color name="nightLine">#37474f</color>
+    <color name="nightimage">#697f84</color>
+    <color name="nightText">#a2aaad</color>
+    <color name="dayAll">#F0F4F5</color>
+    <color name="dayLine">#ffffff</color>
+    <color name="dayView">#00000000</color>
+
+    <color name="load_red">#fa007a</color>
+    <color name="load_purple">#935fe7</color>
+    <color name="load_yellow">#f9b11f</color>
+    <color name="load_blue">#009cfa</color>Ω
+</resources>

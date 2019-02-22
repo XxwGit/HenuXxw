@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemconfig>
+    <interval>3</interval>
+    <pagesize>30</pagesize>
+    <timegap>15</timegap>
+    <minfilesize>1024</minfilesize>
+    <maxfilesize>1024*1024*3</maxfilesize>
+    <ck>是</ck>
+</systemconfig>

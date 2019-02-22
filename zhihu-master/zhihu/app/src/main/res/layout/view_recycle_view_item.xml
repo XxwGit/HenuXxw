@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/rc_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:src="@mipmap/ppb"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1dasdas"
+            android:layout_gravity="center"
+            android:id="@+id/rc_from"
+            android:textColor="@color/gray_all"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/rc_title"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="四邝健廉四谛法邝健廉四谛法邝健廉四谛法邝健廉"
+            android:maxLines="2"
+            android:textColor="@color/gray_all"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/rc_context"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:textColor="@color/ff"
+            android:text="dasdasdas"
+            android:textSize="17sp"
+            />
+
+</LinearLayout>

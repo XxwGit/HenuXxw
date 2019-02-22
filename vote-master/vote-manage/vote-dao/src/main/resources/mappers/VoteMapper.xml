@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vote.dao.VoteMapper">
+  <resultMap id="BaseResultMap" type="com.vote.pojo.Vote">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="startTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="headImg" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="linkUrl" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="eCreator" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ballotSum" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="itemNum" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="visitCapacity" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="modifyTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="enable" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.vote.pojo.Vote">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="startTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="headImg" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="linkUrl" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="eCreator" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ballotSum" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="itemNum" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="visitCapacity" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="modifyTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="enable" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="description" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, startTime, endTime, headImg, linkUrl, eCreator, ballotSum, itemNum, visitCapacity, 
+    modifyTime, createTime, enable
+  </sql>
+  <sql id="Blob_Column_List">
+    description
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from vote
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from vote
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vote.pojo.Vote">
+    insert into vote (id, name, startTime, 
+      endTime, headImg, linkUrl, 
+      eCreator, ballotSum, itemNum, 
+      visitCapacity, modifyTime, createTime, 
+      enable, description)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{endtime,jdbcType=TIMESTAMP}, #{headimg,jdbcType=VARCHAR}, #{linkurl,jdbcType=VARCHAR}, 
+      #{ecreator,jdbcType=INTEGER}, #{ballotsum,jdbcType=INTEGER}, #{itemnum,jdbcType=INTEGER}, 
+      #{visitcapacity,jdbcType=INTEGER}, #{modifytime,jdbcType=TIMESTAMP}, now(),
+      #{enable,jdbcType=INTEGER}, #{description,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vote.pojo.Vote">
+    insert into vote
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="starttime != null">
+        startTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="headimg != null">
+        headImg,
+      </if>
+      <if test="linkurl != null">
+        linkUrl,
+      </if>
+      <if test="ecreator != null">
+        eCreator,
+      </if>
+      <if test="ballotsum != null">
+        ballotSum,
+      </if>
+      <if test="itemnum != null">
+        itemNum,
+      </if>
+      <if test="visitcapacity != null">
+        visitCapacity,
+      </if>
+      <if test="modifytime != null">
+        modifyTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="enable != null">
+        enable,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="headimg != null">
+        #{headimg,jdbcType=VARCHAR},
+      </if>
+      <if test="linkurl != null">
+        #{linkurl,jdbcType=VARCHAR},
+      </if>
+      <if test="ecreator != null">
+        #{ecreator,jdbcType=INTEGER},
+      </if>
+      <if test="ballotsum != null">
+        #{ballotsum,jdbcType=INTEGER},
+      </if>
+      <if test="itemnum != null">
+        #{itemnum,jdbcType=INTEGER},
+      </if>
+      <if test="visitcapacity != null">
+        #{visitcapacity,jdbcType=INTEGER},
+      </if>
+      <if test="modifytime != null">
+        #{modifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null">
+        now(),
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vote.pojo.Vote">
+    update vote
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        startTime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="headimg != null">
+        headImg = #{headimg,jdbcType=VARCHAR},
+      </if>
+      <if test="linkurl != null">
+        linkUrl = #{linkurl,jdbcType=VARCHAR},
+      </if>
+      <if test="ecreator != null">
+        eCreator = #{ecreator,jdbcType=INTEGER},
+      </if>
+      <if test="ballotsum != null">
+        ballotSum = #{ballotsum,jdbcType=INTEGER},
+      </if>
+      <if test="itemnum != null">
+        itemNum = #{itemnum,jdbcType=INTEGER},
+      </if>
+      <if test="visitcapacity != null">
+        visitCapacity = #{visitcapacity,jdbcType=INTEGER},
+      </if>
+      <if test="modifytime != null">
+        modifyTime = #{modifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enable != null">
+        enable = #{enable,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.vote.pojo.Vote">
+    update vote
+    set name = #{name,jdbcType=VARCHAR},
+      startTime = #{starttime,jdbcType=TIMESTAMP},
+      endTime = #{endtime,jdbcType=TIMESTAMP},
+      headImg = #{headimg,jdbcType=VARCHAR},
+      linkUrl = #{linkurl,jdbcType=VARCHAR},
+      eCreator = #{ecreator,jdbcType=INTEGER},
+      ballotSum = #{ballotsum,jdbcType=INTEGER},
+      itemNum = #{itemnum,jdbcType=INTEGER},
+      visitCapacity = #{visitcapacity,jdbcType=INTEGER},
+      modifyTime = #{modifytime,jdbcType=TIMESTAMP},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      enable = #{enable,jdbcType=INTEGER},
+      description = #{description,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vote.pojo.Vote">
+    update vote
+    set name = #{name,jdbcType=VARCHAR},
+      startTime = #{starttime,jdbcType=TIMESTAMP},
+      endTime = #{endtime,jdbcType=TIMESTAMP},
+      headImg = #{headimg,jdbcType=VARCHAR},
+      linkUrl = #{linkurl,jdbcType=VARCHAR},
+      eCreator = #{ecreator,jdbcType=INTEGER},
+      ballotSum = #{ballotsum,jdbcType=INTEGER},
+      itemNum = #{itemnum,jdbcType=INTEGER},
+      visitCapacity = #{visitcapacity,jdbcType=INTEGER},
+      modifyTime = #{modifytime,jdbcType=TIMESTAMP},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      enable = #{enable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectVoteIdByName" parameterType="string" resultType="int">
+    SELECT id
+    FROM vote
+    WHERE name = #{votename}
+  </select>
+</mapper>
