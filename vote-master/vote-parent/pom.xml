@@ -29,7 +29,7 @@
         <jackson-mapper-asl>1.9.12</jackson-mapper-asl>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <commons-pool.version>1.5.4</commons-pool.version>
-        <ch.qos.logback.version>1.1.2</ch.qos.logback.version>
+        <ch.qos.logback.version>1.2.0</ch.qos.logback.version>
         <com.google.guava.version>14.0-rc2</com.google.guava.version>
         <org.apache.commons.version>3.5</org.apache.commons.version>
         <commons-collections.version>3.2.1</commons-collections.version>
