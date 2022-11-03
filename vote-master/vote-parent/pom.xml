@@ -36,7 +36,7 @@
         <joda-time.version>2.3</joda-time.version>
         <org.hashids.version>1.0.1</org.hashids.version>
         <commons-net.version>3.1</commons-net.version>
-        <commons-fileupload.version>1.2.2</commons-fileupload.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <commons-io.version>2.0.1</commons-io.version>
         <com.github.pagehelper.version>4.1.0</com.github.pagehelper.version>
         <com.github.miemiedev.version>1.2.17</com.github.miemiedev.version>
