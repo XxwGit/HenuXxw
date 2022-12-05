@@ -35,7 +35,7 @@
         <commons-collections.version>3.2.1</commons-collections.version>
         <joda-time.version>2.3</joda-time.version>
         <org.hashids.version>1.0.1</org.hashids.version>
-        <commons-net.version>3.1</commons-net.version>
+        <commons-net.version>3.9.0</commons-net.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-io.version>2.0.1</commons-io.version>
         <com.github.pagehelper.version>4.1.0</com.github.pagehelper.version>
